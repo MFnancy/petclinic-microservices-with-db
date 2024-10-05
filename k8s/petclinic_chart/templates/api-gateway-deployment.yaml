@@ -36,7 +36,6 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
-# for admin-server, api-gateway, customers-service, hystrix-dashboard, vets-service and visits service
       initContainers:
         - name: init-discovery-server
           image: busybox
