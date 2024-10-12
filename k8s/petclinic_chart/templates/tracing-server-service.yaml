@@ -5,12 +5,8 @@ metadata:
     kompose.cmd: kompose convert -f docker-compose.yml -o petclinic_chart/templates
     kompose.version: 1.34.0 (cbf2835db)
   labels:
-    io.kompose.service: tracing-server
-  name: tracing-server
+    io.kompose.service: mysql-server
+  name: mysql-server
 spec:
-  ports:
-    - name: "9411"
-      port: 9411
-      targetPort: 9411
-  selector:
-    io.kompose.service: tracing-server
+  type: ExternalName
+  externalName: petclinic.cbanmzptkrzf.us-east-1.rds.amazonaws.com # Change this line with the endpoint of your RDS.
